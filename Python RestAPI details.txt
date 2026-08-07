@@ -1,0 +1,57 @@
+Python RestAPI details
+
+run command : python manage.py runserver 
+
+API Details
+
+Base URL:
+
+http://127.0.0.1:8000/api/employees/
+
+Single employee CRUD:
+
+GET     /api/employees/
+POST    /api/employees/
+GET     /api/employees/{id}/
+PUT     /api/employees/{id}/
+PATCH   /api/employees/{id}/
+DELETE  /api/employees/{id}/
+
+
+Add list of employees:
+
+POST /api/employees/bulk-create/
+
+
+Postman body for bulk create:
+
+[
+  {
+    "name": "Amit Patil",
+    "role": "Manager",
+    "salary": "65000.00"
+  },
+  {
+    "name": "Sneha Rao",
+    "role": "HR",
+    "salary": "40000.00"
+  }
+]
+
+
+Response example:
+[
+  {
+    "id": 2,
+    "name": "Amit Patil",
+    "role": "Manager",
+    "salary": "65000.00"
+  },
+  {
+    "id": 3,
+    "name": "Sneha Rao",
+    "role": "HR",
+    "salary": "40000.00"
+  }
+]
+Verified: tests pass, Django check passes, and live bulk-create returned 201 Created.
